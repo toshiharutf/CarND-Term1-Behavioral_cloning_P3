@@ -1,6 +1,8 @@
 from moviepy.editor import ImageSequenceClip
 import argparse
 
+#python drive.py model.h5 run1
+#The fourth argument, run1, is the directory in which to save the images seen by the agent. If the directory already exists, it'll be overwritten.
 
 def main():
     parser = argparse.ArgumentParser(description='Create driving video.')

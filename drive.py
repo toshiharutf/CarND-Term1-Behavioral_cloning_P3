@@ -21,6 +21,8 @@ app = Flask(__name__)
 model = None
 prev_image_array = None
 
+#python drive.py model.h5 run1
+#The fourth argument, run1, is the directory in which to save the images seen by the agent. If the directory already exists, it'll be overwritten.
 
 class SimplePIController:
     def __init__(self, Kp, Ki):
@@ -44,7 +46,7 @@ class SimplePIController:
 
 
 controller = SimplePIController(0.1, 0.002)
-set_speed = 30
+set_speed = 15
 controller.set_desired(set_speed)
 
 

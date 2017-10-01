@@ -18,7 +18,7 @@ from keras.callbacks import EarlyStopping
 
 from keras.regularizers import l2
 
-EPOCHS = 10
+EPOCHS = 20
 
 model = Sequential()
 model.add(Lambda(lambda x: (x/255-0.5)*2, input_shape=(160,320,3)))
@@ -58,13 +58,13 @@ model.compile(loss='mse', optimizer = adam)
 import pickle
 import numpy as np
 
-old_weights = 'track2_v1.h5'
-new_weights = 'track2_v1.h5'
+old_weights = 'track2origin4.h5'
+new_data = 'track2finetune5.p'
 
 model.load_weights(old_weights)
 print("Loaded weights from: "+ old_weights)
 
-training_file = 'G:/Documents/GITHUB/CarND-DataSets/data/track2ccw.p'
+training_file = 'G:/Documents/GITHUB/CarND-DataSets/data/' + new_data
 with open(training_file, mode='rb') as f:
     train = pickle.load(f)
     
@@ -76,7 +76,7 @@ import matplotlib.pyplot as plt
 plt.hist(y_train,bins=50)
 plt.show()
 
-model.fit(X_train,y_train,validation_split = 0.2, shuffle=True, epochs=EPOCHS,callbacks=[early_stopping])
+model.fit(X_train,y_train,validation_split = 0.1, shuffle=True, epochs=EPOCHS,callbacks=[early_stopping])
 
-model.save(new_weights)
-print("Saved new trained weights in: "+ new_weights)
+model.save(new_data[:-2] + '.h5')
+print("Saved new trained weights in: "+ new_data[:-2] + '.h5')

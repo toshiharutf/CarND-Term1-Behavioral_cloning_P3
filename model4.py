@@ -5,7 +5,7 @@ Created on Sun Sep 17 16:36:57 2017
 @author: Toshiharu
 """
 USE_GENERATOR = False
-EPOCHS = 1
+EPOCHS = 25
 
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten, Dropout, Lambda, Cropping2D
@@ -90,7 +90,7 @@ else:
 ###########################################################################
     import pickle
     
-    training_file = 'G:/Documents/GITHUB/CarND-DataSets/data/track1full.p'
+    training_file = 'G:/Documents/GITHUB/CarND-DataSets/data/track2origin5.p'
     with open(training_file, mode='rb') as f:
         train = pickle.load(f)
         
@@ -108,4 +108,4 @@ else:
 ###########################################################################
 
 
-model.save('test1.h5')
+model.save('track2origin5.h5')
