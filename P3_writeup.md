@@ -4,7 +4,7 @@
 
 The objective of this project was to design an algorithm using deep learning, which can "clone" a human driver behavior and drive a simulated vehicle by itself. In order to train the network, several laps of good driving behavior were recorded. For this project, good driving behavior implies driving in the center of the lane as smooth as possible. The recorded data was also augmented with image processing, and some geometrical assumptions to create more disperse data, so that the model generalize for more scenenarios. The final trained model was able to complete several laps, while maintaining inside the bound of the lane.
 
-The goals / steps of this project are the following:
+**The goals / steps of this project are the following:**
 
 * Use the simulator to collect data of good driving behavior
 * Build a convolution neural network in Keras that predicts steering angles from images
@@ -200,4 +200,20 @@ For the second track, a more challenging task could be designing a neural networ
 Also, in the present work, the task of image filtering had relied solely in the neural network. Specialized image filtering before the neural network may increase the performance of the algorithm. This could allow to design a unique neural network, which can drive in both tracks, without modifications.
 
 
+## How to run the programm
+Requirements:
+Keras min 2.0.6
+python 3.5
+Udacity simulator for the first term. [download here](https://github.com/udacity/self-driving-car-sim)
 
+To run the driving algorithm using my trained weights:
+
+*First track*
+python drive.py track1_weights.h5
+
+*Second track*
+python drive.py track2_weights.h5
+
+Then, run the Udacity simulator in the corresponding track.
+
+Since the second track is very complex, the NN had to be retrained. However, the initial weight values were obtained from the first track, so it took less time to train the second one.

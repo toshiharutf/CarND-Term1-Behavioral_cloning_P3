@@ -8,13 +8,13 @@ USE_GENERATOR = False
 EPOCHS = 25
 
 from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten, Dropout, Lambda, Cropping2D
-from keras.layers.pooling import MaxPooling2D
+from keras.layers import Dense, Flatten, Dropout, Lambda, Cropping2D
+#from keras.layers.pooling import MaxPooling2D
 from keras.layers import Conv2D
 from keras.optimizers import SGD, Adam, RMSprop
 from keras.callbacks import EarlyStopping
 
-from keras.regularizers import l2
+#from keras.regularizers import l2
 
 
 model = Sequential()
@@ -90,7 +90,7 @@ else:
 ###########################################################################
     import pickle
     
-    training_file = 'G:/Documents/GITHUB/CarND-DataSets/data/track2origin5.p'
+    training_file = 'G:/Documents/GITHUB/Term1/CarND-DataSets/Behavioral_clonning/data/track2origin5.p'
     with open(training_file, mode='rb') as f:
         train = pickle.load(f)
         
@@ -106,6 +106,5 @@ else:
 ##########################################################################╚
 ########## SAVE WEIGHTS
 ###########################################################################
-
 
 model.save('track2origin5.h5')

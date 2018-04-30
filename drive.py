@@ -1,3 +1,5 @@
+# Note: You will need at least Keras b 2.0.6 to run this program
+
 import argparse
 import base64
 from datetime import datetime
