@@ -73,7 +73,7 @@ Also, a minimum delta of 0.00009 is imposed as an early stop option. The minimum
 For this project, dropout techniques were the principal way to reduce overfitting. Dropout was applied to fully connected layers, except for the output one. Also, early stopping options, data augmentation, and fine tunning with new training data could also contribute to avoid overfitting. Check model.py lines 37 to 49.
 
 
-##########################################################################################################################
+---
 
 ## Training data
 
